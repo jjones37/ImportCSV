@@ -40,6 +40,5 @@ public class CreateTable {
 		}
 	}
 	
-	String databasePath = "jdbc:sqlite:" + currentDir + "/db/RecordTracker.db";
 
 }

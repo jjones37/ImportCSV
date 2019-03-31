@@ -69,7 +69,7 @@ public class ImportCsv {
 			
 			//Add bad records to csv and close reader
 			addBadRecord(badRecords, currentDir);
-			printStats(currentDir,countGoodRecords,countBadRecords);
+			printStats(currentDir,countGoodRecords,countBadRecords-1);
 			csvReader.close();
 			
 			//Completion message
