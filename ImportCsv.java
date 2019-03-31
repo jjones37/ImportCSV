@@ -11,10 +11,15 @@ import java.io.*;
 import java.text.*;
 
 public class ImportCsv {
+	
+	private static String databasePath = "jdbc:sqlite:mem:RecordTracker.db";
+	static Connection conn;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
+		conn = DriverManager.getConnection(databasePath);
 		createTable();
         readCsv();
+        conn.close();
 	}
 	
 	public static void readCsv() {
@@ -70,7 +75,7 @@ public class ImportCsv {
 			//Completion message
 			JFrame parent = new JFrame();
 			JOptionPane.showMessageDialog(parent, "Import Complete");
-			System.exit(0);
+			//System.exit(0);
 			
 			}catch(Exception e) {
 			e.printStackTrace();
@@ -105,8 +110,8 @@ public class ImportCsv {
 		try {
 			
 			String sql = "";
-			String databasePath = "jdbc:sqlite:" + currentDir + "/db/RecordTracker.db";
-			Connection conn = DriverManager.getConnection(databasePath);
+			//String databasePath = "jdbc:sqlite:" + currentDir + "/db/RecordTracker.db";
+			//Connection conn = DriverManager.getConnection(databasePath);
 			
 			//Insert good records into good record table
 			sql = "INSERT INTO good_table (fname, lname, email, gender, pngFile, cardIss, Amount, bool1, bool2, city) VALUES (" 
@@ -124,7 +129,7 @@ public class ImportCsv {
 			//Execute and close
 			Statement stmt = conn.createStatement();
 			stmt.executeUpdate(sql);
-			conn.close();
+			//conn.close();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -164,8 +169,8 @@ public class ImportCsv {
 			
 			String sql = "";
 			String currentDir = System.getProperty("user.dir");
-			String databasePath = "jdbc:sqlite:" + currentDir + "/db/RecordTracker.db";
-			Connection conn = DriverManager.getConnection(databasePath);
+			//String databasePath = "jdbc:sqlite:" + currentDir + "/db/RecordTracker.db";
+			//Connection conn = DriverManager.getConnection(databasePath);
 			
 			
 			sql = "CREATE TABLE IF NOT EXISTS good_table ( "

@@ -39,5 +39,7 @@ public class CreateTable {
 			e.printStackTrace();
 		}
 	}
+	
+	String databasePath = "jdbc:sqlite:" + currentDir + "/db/RecordTracker.db";
 
 }
