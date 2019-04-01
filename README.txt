@@ -1,6 +1,7 @@
 ImportCSV Coding Challenge
 
 
+
 1. We need a Java application that will consume a CSV file, parse the data and insert to a SQLite In-Memory database.  
 	a. Table X has 10 columns A, B, C, D, E, F, G, H, I, J which correspond with the CSV file column header names.
 	b. Include all DDL in submitted repository
@@ -18,6 +19,8 @@ ImportCSV Coding Challenge
 
 
 To Run the Import CSV
+
+	Requirements: Java 12
 
 	1.Run importCSV.jar
 	2.Pick .csv file when prompted
