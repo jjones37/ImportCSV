@@ -1,0 +1,3 @@
+Total Records: 6002 
+Records Appended: 4867 
+Records Not Appended: 1135 
